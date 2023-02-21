@@ -1,4 +1,5 @@
 import sys
+import os.path
 
 RECOGNIZEABLE_CHARACTERS = ['<', '>', '[', ']', '+', '-', '.', ',']
 
@@ -31,12 +32,16 @@ def open_code(code_path) -> str:
         code.append(clean_line)
     return ''.join(code), array
 
-def main():
-    # code_path = sys.argv[1]
+def main(code_path):
     code_path = 'code.bf'
     code, array = open_code(code_path)
     print(code)
     print(array)
 
 if __name__ == "__main__":
-    main()
+    # Check file existance
+    if os.path.isfile(sys.argv[1]):
+        main(sys.argv[1])
+    else:
+        print('The first argument must be the path to the .bf file. ')
+        exit(1)
