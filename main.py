@@ -40,8 +40,12 @@ def main(code_path):
 
 if __name__ == "__main__":
     # Check file existance
-    if os.path.isfile(sys.argv[1]):
-        main(sys.argv[1])
-    else:
-        print('The first argument must be the path to the .bf file. ')
+    try:
+        if os.path.isfile(sys.argv[1]):
+            main(sys.argv[1])
+        else:
+            print('The first argument must be the path to the .bf file. ')
+            exit(1)
+    except IndexError as e:
+        print('You must provide the .bf file\'s path on the first argument. ')
         exit(1)
