@@ -1,6 +1,6 @@
 This converts a BrainF*ck code to Python code.
 
-It expects a header to define the array size (eg. `#30` would initialize a 30 blocks wide array). If the header is not found (when the first character isn't `#`), it defaults to 30000.
+It expects a header to define the array size (eg. `$30` would initialize a 30 blocks wide array). If the header is not found (when the first character isn't `#`), it defaults to 30000.
 
 Recognized caracters: 
 
