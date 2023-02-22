@@ -16,26 +16,28 @@ class NotASCIIException(Exception):
         return f'\"{self.str}\" is not on ASCII table'
     
 
-def increase_pointer(array: list, pointer: int):
+def move_right_pointer(array: list, pointer: int):
     if pointer == len(array)-1:
         pointer = 0
     else:
         pointer += 1
 
 
-def decrease_pointer(array: list, pointer: int):
+def move_left_pointer(array: list, pointer: int):
     if pointer == 0:
         pointer = len(array)-1
     else:
         pointer -= 1
 
-def add_pointer(array: list, pointer: int):
+
+def increase_pointer(array: list, pointer: int):
     if array[pointer] == 255:
         array[pointer] = 0
     else:
         array[pointer] += 1
 
-def subtract_pointer(array: list, pointer: int):
+
+def decrease_pointer(array: list, pointer: int):
     if array[pointer] == 0:
         array[pointer] = 255
     else:
