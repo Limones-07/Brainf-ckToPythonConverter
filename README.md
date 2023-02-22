@@ -2,8 +2,6 @@
 
 **IMPORTANT:** The generated code might be completly inefficient. Be aware of that.
 
-**IMPORTANT:** The code can be completly inefficient! I'll make a converter to C after completing this converter so you can compile the code. 
-
 It expects a header to define the array size (eg. `$30` would initialize a 30 blocks wide array). If the header is not found (when the first character isn't `$`), it defaults to 30000.
 
 Recognized caracters: 
