@@ -42,3 +42,10 @@ def open_code(code_path) -> str:
 
     return code, str(array)
 
+def insert_loop_open(output_file, identation):
+    output_file.write(f'{identation}while array[pointer] != 0:\n')
+    return f'{identation}    '
+
+def insert_loop_close(identation):
+    return identation.replace('    ', '', 1)
+
