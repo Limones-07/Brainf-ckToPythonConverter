@@ -1,4 +1,4 @@
-This converts a BrainF*ck code to Python code.
+## This converts a BrainF*ck code to Python code.
 
 **IMPORTANT:** The generated code might be completly inefficient. Be aware of that.
 
@@ -23,3 +23,5 @@ Recognized caracters:
 + . = prints a character to the console
 
 Every character that isn't listed here, except for the header, is considered a comment, so feel free to decorate your code and leave as much explanations as you need.
+
+**USAGE:** main.py path/to/code.bf
