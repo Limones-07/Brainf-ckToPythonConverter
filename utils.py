@@ -28,3 +28,8 @@ def open_code(code_path) -> str:
             code.append(clean_line)
     return ''.join(code), str(array)
 
+def insert_loop_open(output_file):
+    pass
+
+def insert_loop_close(output_file):
+    pass
