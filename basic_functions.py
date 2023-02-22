@@ -54,3 +54,4 @@ def input_pointer(array: list, pointer: int):
         array[pointer] = ord(input_txt)
     else:
         raise NotCharException(input_txt)
+
