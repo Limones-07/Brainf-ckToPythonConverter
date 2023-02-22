@@ -7,7 +7,6 @@ def open_code(code_path) -> str:
     code, array = [], []
     RECOGNIZEABLE_CHARACTERS = ['<', '>', '[', ']', '+', '-', '.', ',']
     with open(code_path, "r") as file:
-
         first_line = file.readline()
         if first_line[0] == "$":
             array_size = [x for x in first_line]
@@ -26,5 +25,27 @@ def open_code(code_path) -> str:
                     clean_line.append(character)
             clean_line = ''.join(clean_line)
             code.append(clean_line)
-    return ''.join(code), str(array)
+    
+    code = ''.join(code)
+
+    while '[]' in code:
+        code = code.replace('[]', '')
+
+    loops = 0
+    for character in code:
+        if character == '[':
+            loops += 1
+        if character == ']':
+            loops -= 1
+    if bool(loops):
+        raise SyntaxError('there are some square brackets without a matching pair')
+
+    return code, str(array)
+
+def insert_loop_open(output_file, identation):
+    output_file.write(f'{identation}while array[pointer] != 0:\n')
+    return f'{identation}    '
+
+def insert_loop_close(identation):
+    return identation.replace('    ', '', 1)
 
