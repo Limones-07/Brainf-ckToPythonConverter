@@ -27,6 +27,14 @@ def open_code(code_path) -> str:
             code.append(clean_line)
     
     code = ''.join(code)
+
+    print(code)
+
+    while '[]' in code:
+        code = code.replace('[]', '')
+
+    print(code)
+
     loops = 0
     for character in code:
         if character == '[':
@@ -38,8 +46,3 @@ def open_code(code_path) -> str:
 
     return code, str(array)
 
-def insert_loop_open(output_file):
-    pass
-
-def insert_loop_close(output_file):
-    pass
