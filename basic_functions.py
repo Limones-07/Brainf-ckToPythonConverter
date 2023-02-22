@@ -18,16 +18,16 @@ class NotASCIIException(Exception):
 
 def move_right_pointer(array: list, pointer: int):
     if pointer == len(array)-1:
-        pointer = 0
+        return 0
     else:
-        pointer += 1
+        return pointer + 1
 
 
 def move_left_pointer(array: list, pointer: int):
     if pointer == 0:
-        pointer = len(array)-1
+        return len(array)-1
     else:
-        pointer -= 1
+        return pointer - 1
 
 
 def increase_pointer(array: list, pointer: int):
@@ -56,4 +56,5 @@ def input_pointer(array: list, pointer: int):
         array[pointer] = ord(input_txt)
     else:
         raise NotCharException(input_txt)
+
 
